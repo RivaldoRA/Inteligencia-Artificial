@@ -27,3 +27,15 @@ Velocidad en Y
 **Estado del entorno**
 Dimensiones del escenario
 Tiempo transcurrido
+
+# CNN Sport Images
+
+## Sin cambios
+![CNN Sin Cambios 1](./CNN-Sports/Capturas/MismosParametros1.png)
+![CNN Sin Cambios 2](./CNN-Sports/Capturas/MismosParametros2.png)
+![CNN Sin Cambios 3](./CNN-Sports/Capturas/MismosParametros3.png)
+
+## 40 Epocas
+![CNN 40 Epocas](./CNN-Sports/Capturas/40Epocas.png)
+
+## 
