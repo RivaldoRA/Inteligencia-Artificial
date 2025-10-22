@@ -1,0 +1,67 @@
+import cv2
+import mediapipe as mp
+
+mp_hands = mp.solutions.hands
+mp_drawing = mp.solutions.drawing_utils
+hands = mp_hands.Hands(static_image_mode=False, max_num_hands=2, min_detection_confidence=0.5)
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    frame= cv2.flip(frame, 1)
+    # Convertir imagen a RGB (MediaPipe usa RGB)
+    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = hands.process(frame_rgb)
+
+    # Variables para guardar coordenadas
+    right_index = None
+    right_thumb = None
+
+    psi_rectangulo = (100,100)
+    pid_rectangulo = (300,300)
+    cv2.rectangle(frame, psi_rectangulo, pid_rectangulo, (255, 0, 0), 3)
+            
+    if results.multi_hand_landmarks and results.multi_handedness:
+        for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):
+            label = handedness.classification[0].label  # 'Left' o 'Right'
+            #print(label)
+            h, w, _ = frame.shape
+            
+            thumb_tip = hand_landmarks.landmark[4]
+            x, y = int(thumb_tip.x * w), int(thumb_tip.y * h)
+
+            if label == 'Right':
+                right_thumb = (x, y)
+
+            # Coordenadas del índice (landmark 8)
+            index_tip = hand_landmarks.landmark[8]
+            x, y = int(index_tip.x * w), int(index_tip.y * h)
+            
+            # Guardar según la mano
+            if label == 'Right':
+                right_index = (x, y)
+
+            # Dibujar los landmarks (opcional)
+            mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+        # Si ambas manos detectadas, dibujar línea entre los dos puntos
+        if right_thumb and right_index:
+            cv2.line(frame, right_thumb, right_index, (0, 255, 0), 3)
+            #cv2.rectangle(frame, right_thumb, right_index, (0, 255, 0), 3)
+            cv2.circle(frame, right_thumb, 8, (255, 0, 0), -1)
+            cv2.circle(frame, right_index, 8, (0, 0, 255), -1)
+
+            psi_rectangulo = ()
+            pid_rectangulo = ()
+
+    cv2.imshow("Line", frame)
+    cv2.resizeWindow("Line", 400,400)
+
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+
+cap.release()
+cv2.destroyAllWindows()
