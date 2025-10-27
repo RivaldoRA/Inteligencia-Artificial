@@ -39,3 +39,7 @@ Tiempo transcurrido
 ![CNN 40 Epocas](./CNN-Sports/Capturas/40Epocas.png)
 
 ## 
+
+# Comparación de Fisherface LLPH Eigenface y mediapipe en cuanto a las emociones
+determinar que conjunto de puntos es suficiente para analizar el movimiento de puntos
+
