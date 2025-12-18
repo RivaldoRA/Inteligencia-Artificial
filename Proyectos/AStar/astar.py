@@ -227,10 +227,16 @@ def main(ventana, ancho):
                     
                     algoritmo_a_estrella(lambda: dibujar(ventana, grid, FILAS, ancho), grid, inicio, fin)
 
-                if event.key == pygame.K_c: # Limpiar todo con la tecla C
+                if event.key == pygame.K_r: # Limpiar todo con la tecla R
                     inicio = None
                     fin = None
                     grid = crear_grid(FILAS, ancho)
+
+                if event.key == pygame.K_c: # Limpiar todo con la tecla C
+                    for fila in grid:
+                        for nodo in fila:
+                            nodo.limpiar_rastro()
+                            nodo.actualizar_vecinos(grid)
 
     pygame.quit()
 
