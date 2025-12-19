@@ -1,7 +1,3 @@
-A continuación, presento el informe final estructurado, diseñado para ser presentado de forma profesional. Este documento sintetiza los hallazgos del sistema RAG, integrando la evidencia empírica con el análisis filosófico solicitado.
-
----
-
 # Informe de Análisis: La Condición Digital de la Generación Z
 
 **Fecha:** 18 de diciembre de 2025
@@ -18,63 +14,42 @@ El presente informe documenta la intersección entre la tecnología algorítmica
 
 ## 2. Hallazgos sobre Identidad y Algoritmos
 
-### 2.1 La Construcción de la Identidad Líquida
+### Obtencion de los datasets
 
-Los datos sugieren que la identidad ya no es un proyecto estático, sino un proceso de **"identidad líquida"**. La Gen Z percibe su "yo" como una entidad mutable que se renegocia constantemente en las plataformas.
+Se obtuvo la mayoria de los datos del sitio web Reddit, especificamente del subreddit r/Genz donde se buscaron palabras especificas como burnout, depression, etc.
 
-* **Identidad Híbrida:** Se observa una mezcla de identidades que no encajan en categorías fijas.
-* **Influencia Algorítmica:** Los algoritmos no solo recomiendan contenido; actúan como arquitectos de la identidad al crear "esferas de influencia" que condicionan el deseo y el consumo.
 
-### 2.2 Discursos Auténticos vs. Performativos
+Debido a que Reddit no permite los web crawlers se opto por una media distinta, encontrar los post de manera manual y descargar toda la pagina web (htm) para despues extraer el texto importante
 
-En plataformas como TikTok, se detecta una amalgama donde la línea entre lo real y lo actuado es difusa:
+Tambien sacamos pdfs de Google de la Gen Z y de filosofos
 
-* **Discurso Performativo:** Diseñado para influir y crear efectos sociales (identidades virtuales).
-* **Discurso Auténtico:** Búsqueda de conexión genuina, aunque a menudo mediada por las herramientas de la plataforma (humor, filtros).
+# Embeddings
 
----
+Para la interpretación del corpus, se transformaron los fragmentos de texto (chunks) en vectores matemáticos de alta dimensionalidad (embeddings) utilizando un modelo de lenguaje avanzado. Estos vectores permiten que el sistema RAG no solo busque palabras clave, sino que entienda el contexto semántico de las preocupaciones de la Gen Z.
 
-## 3. Salud Mental y Presión Digital
+Este proceso permitió identificar que términos coloquiales en Reddit (como "doomscrolling") tienen una cercanía matemática directa con conceptos académicos (como la "vigilancia" de Foucault o la "liquidez" de Bauman), facilitando un puente entre el lenguaje digital y la teoría filosófica.
 
-### 3.1 El Fenómeno del Burnout
 
-El análisis identifica una prevalencia de **ansiedad, estrés y miedo**. El "burnout digital" no solo proviene del exceso de trabajo, sino de la exigencia de mantener una presencia constante y perfecta en el ecosistema digital.
+# Graficas
 
-### 3.2 La Sociedad del Rendimiento (Byung-Chul Han)
+Nubes de Palabras Bilingües: Evidenciaron las obsesiones temáticas del corpus. Palabras como "life", "work", "gen z" y "social media" dominan la narrativa, mientras que términos como "burnout" y "anxiety" aparecen como los síntomas transversales de la época.
 
-Se confirman patrones que apoyan la tesis de Han sobre la **autoexplotación**:
+![nube](./Graficas/nube_filosofica.png)
 
-* Los individuos se perciben como "elementos de teorías" que deben ajustarse a estándares de eficiencia.
-* La libertad se transforma en una obligación de rendimiento, donde el sujeto se explota a sí mismo bajo la apariencia de autonomía.
+Grafo de Red de Conceptos: Mostró que la crisis de sentido no es un fenómeno aislado. Los nodos de "performance" (rendimiento) y "anxiety" (ansiedad) actúan como puentes que conectan la vida cotidiana con la tecnología, demostrando la interdependencia entre el sistema productivo y el ecosistema digital.
 
----
 
-## 4. Análisis Filosófico de la Vigilancia y la Autonomía
+![grafo](./Graficas/grafo_red_conceptos.png)
 
-### 4.1 El Panóptico Algorítmico (Foucault)
 
-Desde una perspectiva foucaultiana, el régimen algorítmico funciona como una **extensión de la sociedad disciplinaria**:
+Gráfica de Radar de Afinidad Teórica: Cuantificó la relación con los marcos teóricos. El corpus presenta una afinidad del 88% con Byung-Chul Han, sugiriendo que la Gen Z vive bajo una "sociedad del cansancio" donde la autoexplotación digital es la principal fuente de crisis.
 
-1. **Normalización:** El algoritmo define qué comportamientos son "normales" premiándolos con visibilidad.
-2. **Vigilancia Invisible:** El control ya no requiere de una autoridad física presente; se ejerce a través del monitoreo constante de datos y la predicción de comportamientos.
+![radar](./Graficas/radar_afinidad_filosofica.png)
 
-### 4.2 La Autonomía Condicionada
+# Conclusiones
 
-Existe una paradoja fundamental: la Gen Z siente una gran libertad de acceso y comunicación, pero reconoce que esta **autonomía está condicionada**. La tecnología es el marco que permite la acción, pero al mismo tiempo limita la capacidad de reflexión crítica mediante la "burbuja de filtros".
+Tras el análisis de los datos recuperados y su contraste con la filosofía contemporánea, se concluye lo siguiente:
 
----
+El malestar de la Generación Z en Reddit coincide mayoritariamente con la tesis de Byung-Chul Han. La crisis de sentido no es una búsqueda existencial clásica, sino un síntoma de agotamiento por la exigencia de visibilidad y productividad en las plataformas digitales.
 
-## 5. Crisis de Sentido y Lenguaje
-
-### 5.1 Patrones de Desorientación Vital
-
-El lenguaje recuperado muestra señales de una crisis de sentido similar a la descrita por Camus:
-
-* **Metáforas de Vacío:** Uso de términos como "desierto" para describir la experiencia en redes.
-* **Rechazo a Metarrelatos:** Siguiendo a Lyotard, se observa una incredulidad hacia los grandes valores tradicionales, sustituyéndolos por consensos locales y discusiones fragmentadas.
-
----
-
-## 6. Conclusiones
-
-El sistema RAG ha demostrado que la Generación Z habita un espacio de tensión constante. Mientras que la tecnología ofrece herramientas de expansión personal, el régimen de vigilancia algorítmica y la presión por el rendimiento generan estados de agotamiento y crisis de propósito. La identidad se ha vuelto "líquida" y "digital", dependiente de un sistema que fomenta la autoexplotación bajo la máscara de la conectividad total.
+El Vacío Digital: El aislamiento de los conceptos de "propósito" y "sentido" en los grafos de red indica una dificultad para integrar metas a largo plazo en una vida fragmentada por el consumo inmediato de contenido.
