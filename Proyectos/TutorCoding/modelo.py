@@ -7,7 +7,7 @@ st.title("Tutor de Programación (Ollama)")
 
 # Configuración: Nombre del modelo que tienes en Ollama
 # Puedes ver tus modelos con el comando 'ollama list' en la terminal
-MODEL_NAME = "llama3.2" 
+MODEL_NAME = "mi-tutor" 
 
 if "messages" not in st.session_state:
     st.session_state.messages = []

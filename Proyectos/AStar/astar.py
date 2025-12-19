@@ -8,15 +8,17 @@ VENTANA = pygame.display.set_mode((ANCHO_VENTANA, ANCHO_VENTANA))
 pygame.display.set_caption("A* Pathfinding Visualizer")
 
 # Colores (RGB)
-BLANCO = (255, 255, 255)
-NEGRO = (0, 0, 0)
-GRIS = (128, 128, 128)
-VERDE = (0, 255, 0)
-ROJO = (255, 50,50)
-AZUL = (0, 0, 255)
-NARANJA = (255, 165, 0)
-PURPURA = (128, 0, 128)
-TURQUESA = (64, 224, 208)
+NEGRO    = (255, 255, 255)   # igual
+GRIS     = (0, 0, 0)
+BLANCO      = (35, 37, 40)   # gris más cálido
+
+VERDE     = (144, 238, 144)    # verde amarillento
+ROJO      = (247,174,174)    # rojo tirando a naranja/amarillo
+AZUL      = (124, 144, 219)     # azul menos frío
+
+NARANJA   = (255, 164, 0)    # naranja más claro y cálido
+PURPURA  = (187, 12, 129)    # púrpura más cálido
+TURQUESA = (0, 159, 253)   # turquesa con más amarillo
 
 class Nodo:
     def __init__(self, fila, col, ancho, total_filas):
@@ -184,7 +186,7 @@ def obtener_click_pos(pos, filas, ancho):
     return fila, col
 
 def main(ventana, ancho):
-    FILAS = 12  # Aumentado para mejor visualización
+    FILAS = 13
     grid = crear_grid(FILAS, ancho)
 
     inicio = None
