@@ -18,7 +18,6 @@ El presente informe documenta la intersección entre la tecnología algorítmica
 
 Se obtuvo la mayoria de los datos del sitio web Reddit, especificamente del subreddit r/Genz donde se buscaron palabras especificas como burnout, depression, etc.
 
-
 Debido a que Reddit no permite los web crawlers se opto por una media distinta, encontrar los post de manera manual y descargar toda la pagina web (htm) para despues extraer el texto importante
 
 Tambien sacamos pdfs de Google de la Gen Z y de filosofos
